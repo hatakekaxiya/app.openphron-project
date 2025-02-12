@@ -1,0 +1,103 @@
+import { QueryClient } from "@tanstack/react-query";
+import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import {
+  arbitrum,
+  arbitrumSepolia,
+  aurora,
+  auroraTestnet,
+  avalanche,
+  base,
+  baseSepolia,
+  berachain,
+  berachainTestnet,
+  boba,
+  bobaSepolia,
+  celo,
+  cronos,
+  cronosTestnet,
+  evmos,
+  evmosTestnet,
+  fantom,
+  fantomTestnet,
+  gnosis,
+  gnosisChiado,
+  harmonyOne,
+  holesky,
+  klaytn,
+  mainnet,
+  metis,
+  moonbeam,
+  omax,
+  optimism,
+  polygon,
+  polygonZkEvm,
+  sepolia,
+  syscoin,
+  telos,
+  telosTestnet,
+  theta,
+  zksync,
+  zksyncSepoliaTestnet,
+} from "viem/chains";
+import {
+  binanceSmartChain,
+  hyperledgerBesu,
+  phronAI,
+  starknet,
+} from "../AImarketplace/blockchain/thirdweb-networks";
+
+export const config = {
+  server: process.env.REACT_APP_SERVER_URL,
+  deploy: process.env.REACT_APP_DEPLOY_URL,
+};
+
+export const wagmiConfig = getDefaultConfig({
+  appName: "My RainbowKit App",
+  projectId: "YOUR_PROJECT_ID",
+  chains: [
+    mainnet,
+    sepolia,
+    arbitrum,
+    arbitrumSepolia,
+    phronAI,
+    berachain,
+    berachainTestnet,
+    boba,
+    bobaSepolia,
+    aurora,
+    auroraTestnet,
+    avalanche,
+    base,
+    baseSepolia,
+    binanceSmartChain,
+    // celo,
+    cronos,
+    cronosTestnet,
+    evmos,
+    evmosTestnet,
+    fantom,
+    fantomTestnet,
+    gnosis,
+    gnosisChiado,
+    harmonyOne,
+    hyperledgerBesu,
+    klaytn,
+    metis,
+    moonbeam,
+    optimism,
+    polygonZkEvm,
+    polygon,
+    starknet,
+    syscoin,
+    telos,
+    telosTestnet,
+    zksync,
+    zksyncSepoliaTestnet,
+    holesky
+  ],
+  // ssr: true, // If your dApp uses server side rendering (SSR)
+});
+
+export const queryClient = new QueryClient();
+
+export default config;
